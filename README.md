@@ -28,8 +28,7 @@
 <a href="https://qameta.io/"><img src="media\logo\Allure_TO.svg" width="50" height="50" alt="Allure_TO" title="Allure_TO"></a>
 </p>
 
-### В данном проекте автотесты написаны на <code>Java</code> с использованием <code>Selenide</code> для UI-тестов.
->
+
 > Автотесты написаны на <code>Java</code>
 >
 > <code>Selenide</code> - это фреймворк для автоматизированного тестирования веб-приложений на основе <code>Selenium WebDriver</code>.
@@ -90,10 +89,12 @@ gradle clean test -Denv=remote
 ### :earth_asia: Удаленный запуск тестов
 
 ```bash
-gradle clean test
--Dbrowser=${browser}
--DbrowserVersion=${browserVersion}
--DbrowserSize=${browserSize}
+clean
+test
+"-DremoteUrl=${REMOTE_SELENOID_URL}"
+"-DbrowserSize=${BROWSER_SIZE}"
+"-Dbrowser=${BROWSER}"
+"-DbrowserVersion=${BROWSER_VERSION}"
 ```
 
 ## Примеры использования
@@ -106,9 +107,9 @@ gradle clean test
 * pageLoadTimeout - переопределение таймаута выставленного по умолчанию
 * remoteUrl - url адрес selenoid
 
-Логин и пароль извлекаются из соответствующего файла конфигурации:
+Логин и пароль извлекаются из файла конфигурации:
 ```bash
-./resources/test.properties
+test.properties
 ```
 
 
@@ -132,51 +133,44 @@ gradle clean test
 
 
 
-## <img width="4%" title="Jenkins" src="media/logo/Jenkins.svg"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job//)
+## <img width="4%" title="Jenkins" src="media/logo/Jenkins.svg"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/diploma_project_ui/)
 Для запуска сборки необходимо перейти в раздел <code><strong>*Собрать с параметрами*</strong></code> и нажать кнопку <code><strong>*Собрать*</strong></code>.
 
 <p align="center">
-  <img src="media/screen/start_jenkins.png" alt="Jenkins" width="800">
+  <img src="media/screen/jenkins1.png" alt="Jenkins" width="800">
 </p>
 
 После выполнения сборки, в блоке <code><strong>*История сборок*</strong></code> напротив номера сборки появится
 значок *Allure Report* и *Allure TestOps* кликнув по которому, откроется страница с сформированным html-отчетом и тестовой документацией.
 
-## <img width="4%" title="Allure Report" src="media/logo/Allure_Report.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job//)
+## <img width="4%" title="Allure Report" src="media/logo/Allure_Report.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/diploma_project_ui/4/allure/)
 
 <p align="center">
-  <img src="media/screen/jenkins_overview.png" alt="allure-report" width="900">
+  <img src="media/screen/allure-report1.png" alt="allure-report_1" width="900">
 </p>
 
 <p align="center">
-  <img src="media/screen/jenkins_behaviors.png" alt="allure-report_1" width="900">
+  <img src="media/screen/allure-report2.png" alt="allure-report_2" width="900">
 </p>
 
-## <img width="4%" title="Allure TestOPS" src="media/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/)
+## <img width="4%" title="Allure TestOPS" src="media/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/19415/)
 
-### Основной дашборд
 
 <p align="center">
-  <img src="media/screen/dashboards.png" alt="dashboard" width="900">
+  <img src="media/screen/Allure_TO1.png" alt="dashboard" width="900">
 </p>
 
-### Список тестов с результатами прогона
 
 <p align="center">
-  <img src="media/screen/allure-testops-results.png" alt="dashboard" width="900">
+  <img src="media/screen/Allure_TO2.png" alt="dashboard" width="900">
 </p>
 
-### Тест-кейсы
-
-<p align="center">
-  <img src="media/screen/allure-testops-testcases.png" alt="testcase" width="900">
-</p>
 
 ## <img width="4%" title="Telegram" src="media/logo/Telegram.svg"> Уведомления в Telegram
-После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне тестов.
+После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прохождении тестов.
 
 <p align="center">
-<img title="Telegram Notifications" src="media/screen/notifications.png">
+<img title="Telegram Notifications" src="media/screen/tg_notify.png">
 
 ## :movie_camera: Видео с прогоном тестов
 
