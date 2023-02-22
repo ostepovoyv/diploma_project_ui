@@ -5,6 +5,8 @@ import kz.shop.test.pages.PriceListPage;
 import kz.shop.test.testdata.TestData;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.io.File;
 import java.io.FileNotFoundException;
 
 import static kz.shop.test.testdata.PriceLists.*;
@@ -22,15 +24,17 @@ public class PriceListTests extends BaseTest {
     public void checkRetailPriceList() throws FileNotFoundException {
         priceListPage
                 .openPriceListPage(TestData.PR_TEXT)
-                .selectRetailPriceList(TestData.PR_RETAIL)
-                .checkPriceList(prRetailCompanyName)
-                .checkPriceList(prRetailSite)
-                .checkPriceList(prRetailName)
-                .checkPriceList(prRetailCode)
-                .checkPriceList(prRetailNomination)
-                .checkPriceList(prRetailPrice)
-                .checkPriceList(prRetailGuarantee)
-                .checkPriceList(prRetailNote);
+                .selectRetailPriceList(TestData.PR_RETAIL);
+        File file = priceListPage.downloadFile(TestData.PR_RETAIL);
+        priceListPage
+                .checkPriceList(prRetailCompanyName, file)
+                .checkPriceList(prRetailSite, file)
+                .checkPriceList(prRetailName, file)
+                .checkPriceList(prRetailCode, file)
+                .checkPriceList(prRetailNomination, file)
+                .checkPriceList(prRetailPrice, file)
+                .checkPriceList(prRetailGuarantee, file)
+                .checkPriceList(prRetailNote, file);
     }
 
     @Test
@@ -38,12 +42,14 @@ public class PriceListTests extends BaseTest {
     public void checkServicesPriceList() throws FileNotFoundException {
         priceListPage
                 .openPriceListPage(TestData.PR_TEXT)
-                .selectServicesPriceList(TestData.PR_SERVICES)
-                .checkPriceList(prServicesCompanyName)
-                .checkPriceList(prServicesName)
-                .checkPriceList(prServicesCode)
-                .checkPriceList(prServicesNomination)
-                .checkPriceList(prServicesPrice);
+                .selectServicesPriceList(TestData.PR_SERVICES);
+        File file = priceListPage.downloadFile(TestData.PR_SERVICES);
+        priceListPage
+                .checkPriceList(prServicesCompanyName,file)
+                .checkPriceList(prServicesName,file)
+                .checkPriceList(prServicesCode,file)
+                .checkPriceList(prServicesNomination,file)
+                .checkPriceList(prServicesPrice,file);
     }
 
 }

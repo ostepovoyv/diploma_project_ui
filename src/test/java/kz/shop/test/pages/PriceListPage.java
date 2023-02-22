@@ -19,16 +19,14 @@ public class PriceListPage {
 
     private String
             retailPriceLocator = "#li_76476",
-            retailPriceFileName = "WW_retail_all.xls",
+            retailPriceFileCategory = "Розничный общий",
             servicesPriceLocator = "#li_83700",
-            servicesPriceFileName = "WW_services.xls";
+            servicesPriceFileCategory = "Сервисные услуги";
 
     private final SelenideElement
             pagetitle = $("#pagetitle"),
             retailPriceList = $(retailPriceLocator),
             servicesPriceList = $(servicesPriceLocator);
-
-
 
 
     @Step("Переходим на страницу прайс листов")
@@ -51,37 +49,26 @@ public class PriceListPage {
     }
 
     @Step("Проверяем файл {fileName} и его содержимое")
-    public PriceListPage checkPriceList(PriceList priceList) throws FileNotFoundException {
-        if (priceList.getFileName().equals(retailPriceFileName)) {
-            checkFile(retailPriceLocator,
-                    priceList.getFileName(),
-                    priceList.getSheet(),
-                    priceList.getRow(),
-                    priceList.getCell(),
-                    priceList.getValue());
-        }
-        if (priceList.getFileName().equals(servicesPriceFileName)) {
-            checkFile(servicesPriceLocator,
-                    priceList.getFileName(),
-                    priceList.getSheet(),
-                    priceList.getRow(),
-                    priceList.getCell(),
-                    priceList.getValue());
-        }
+    public PriceListPage checkPriceList(PriceList priceList, File file) {
+        checkFile(priceList, file);
         return this;
     }
 
-    private void checkFile(String locatorValue,
-                           String fileName,
-                           Integer sheet,
-                           Integer row,
-                           Integer cell,
-                           String value
-    ) throws FileNotFoundException {
-        File downloadedFile = $(locatorValue).download();
-        assertThat(downloadedFile.getName()).matches(fileName);
-        XLS xlsx = new XLS(getFile(downloadedFile));
-        assertThat(xlsx.excel.getSheetAt(sheet).getRow(row).getCell(cell).getStringCellValue()).isEqualTo(value);
+    @Step("Загружаем файл, для дальнейшего использования в проверках")
+    public File downloadFile(String fileName) throws FileNotFoundException {
+        if (fileName.equals(retailPriceFileCategory)) {
+            return $(retailPriceLocator).download();
+        }
+        if (fileName.equals(servicesPriceFileCategory)) {
+            return $(servicesPriceLocator).download();
+        }
+        return null;
+    }
+
+    private void checkFile(PriceList priceList, File file) {
+        assertThat(file.getName()).matches(priceList.getFileName());
+        XLS xlsx = new XLS(getFile(file));
+        assertThat(xlsx.excel.getSheetAt(priceList.getSheet()).getRow(priceList.getRow()).getCell(priceList.getCell()).getStringCellValue()).isEqualTo(priceList.getValue());
     }
 
 }
