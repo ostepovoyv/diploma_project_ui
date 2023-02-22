@@ -80,13 +80,13 @@ gradle clean test -Denv=local
 gradle clean test -Denv=remote 
 ```
 ### Запуск тестов в Jenkins
-#### Для запуска тестов в Jenkins используется команда
+#### Для запуска тестов в Jenkins без параметров используется команда
 ```
 gradle clean test -Denv=remote
 ```
 #### Для запуска тестов в Jenkins используется <code>remote.proterties</code>
 
-### :earth_asia: Удаленный запуск тестов
+### :earth_asia: Удаленный запуск тестов с параметрами
 
 ```bash
 clean
@@ -100,17 +100,6 @@ test
 ## Примеры использования
 
 ### Для запуска удаленных тестов необходимо заполнить remote.properties или передать значение:
-* baseUrl - основной url
-* browser (браузер, по умолчанию chrome)
-* browserVersion (версия браузера, по умолчанию 100.0)
-* browserSize (размер окна браузера, по умолчанию 1920x1080)
-* pageLoadTimeout - переопределение таймаута выставленного по умолчанию
-* remoteUrl - url адрес selenoid
-
-Логин и пароль извлекаются из файла конфигурации:
-```bash
-test.properties
-```
 
 
 #### Параметры сборки
@@ -130,6 +119,11 @@ test.properties
 > Для запуска тестов в несколько потоков необходимо добавить параметр <code>-Dthreads={Количество потоков}</code>
 >
 > Например: <code>gradle clean test -Dthreads=2</code>
+
+Логин и пароль извлекаются из файла конфигурации:
+```bash
+test.properties
+```
 
 
 
