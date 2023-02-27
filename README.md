@@ -134,7 +134,7 @@ test.properties
 Для запуска сборки необходимо перейти в раздел <code><strong>*Собрать с параметрами*</strong></code> и нажать кнопку <code><strong>*Собрать*</strong></code>.
 
 <p align="center">
-  <img src="media/screen/jenkins1.png" alt="Jenkins" width="800">
+  <img src="media/screen/jenkins1.png" alt="Jenkins" width="900">
 </p>
 
 После выполнения сборки, в блоке <code><strong>*История сборок*</strong></code> напротив номера сборки появится
