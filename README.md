@@ -166,7 +166,7 @@ test.properties
 <p align="center">
 <img title="Telegram Notifications" src="media/screen/tg_notify.png">
 
-## :movie_camera: Видео с прогоном тестов
+## :movie_camera: Видео с примером прохождения теста
 
 В отчетах Allure для каждого теста прикреплен не только скриншот, но и видео прохождения теста
 
