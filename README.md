@@ -1,7 +1,7 @@
 # Дипломный проект по тестированию интернет-магазина [shop.kz](https://shop.kz/)
 
 <p align="center">
-<img title="shop.kz" src="media/logo/shop_kz_logo.png">
+<img title="shop.kz" name="shop.kz" src="media/logo/shop_kz_logo.png">
 </p>
 
 ## :open_book: Содержание:
@@ -177,4 +177,4 @@ test.properties
   <img title="Video" src="media/video/toCart.gif">
 </p>
 
-[Вернуться к началу ⬆](#Ссылка)
+[Вернуться к началу ⬆](#shop.kz)
