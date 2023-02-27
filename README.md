@@ -176,3 +176,5 @@ test.properties
 <p align="center">
   <img title="Video" src="media/video/toCart.gif">
 </p>
+
+[Вернуться к началу ⬆](#Ссылка)
