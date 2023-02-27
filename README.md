@@ -152,14 +152,19 @@ test.properties
 
 ## <img width="4%" title="Allure TestOPS" src="media/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/19415/)
 
-
+### Основной дашборд
 <p align="center">
-  <img src="media/screen/Allure_TO1.png" alt="dashboard" width="900">
+  <img src="media/screen/Allure_TO1.png" alt="dashboard1" width="900">
 </p>
 
-
+### Список тестов с результатами
 <p align="center">
-  <img src="media/screen/Allure_TO2.png" alt="dashboard" width="900">
+  <img src="media/screen/Allure_TO2.png" alt="dashboard2" width="900">
+</p>
+
+### Test plans
+<p align="center">
+  <img src="media/screen/Allure_TO3.png" alt="dashboard3" width="900">
 </p>
 
 
