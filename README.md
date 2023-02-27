@@ -1,5 +1,9 @@
 # Дипломный проект по тестированию интернет-магазина [shop.kz](https://shop.kz/)
 
+<p align="center">
+<img title="shop.kz" src="media/logo/shop_kz_logo.png">
+</p>
+
 ## :open_book: Содержание:
 
 - [Технологии и инструменты](#gear-технологии-и-инструменты)
@@ -124,7 +128,6 @@ test
 ```bash
 test.properties
 ```
-
 
 
 ## <img width="4%" title="Jenkins" src="media/logo/Jenkins.svg"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/diploma_project_ui/)
