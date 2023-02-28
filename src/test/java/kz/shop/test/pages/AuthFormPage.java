@@ -35,7 +35,7 @@ public class AuthFormPage {
     }
 
     @Step("Проверка статуса авторизации")
-    public AuthFormPage checkAuthStatus(String value){
+    public AuthFormPage checkAuthStatus(String value) {
         authStatus.shouldHave(Condition.text(value));
         return this;
     }

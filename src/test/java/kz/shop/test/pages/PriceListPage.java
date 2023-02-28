@@ -28,7 +28,6 @@ public class PriceListPage {
             retailPriceList = $(retailPriceLocator),
             servicesPriceList = $(servicesPriceLocator);
 
-
     @Step("Переходим на страницу прайс листов")
     public PriceListPage openPriceListPage(String value) {
         open(PRICE_LIST_PAGE);

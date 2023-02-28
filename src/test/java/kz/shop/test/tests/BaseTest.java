@@ -14,18 +14,18 @@ import static com.codeborne.selenide.Selenide.open;
 public class BaseTest {
 
     @BeforeAll
-    public static void setUpMain(){
+    public static void setUpMain() {
         ProjectConfig.setUp();
     }
 
     @BeforeEach
-    public void beforeEachTest(){
+    public void beforeEachTest() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         open("/");
     }
 
     @AfterEach
-    public void afterEachTest(){
+    public void afterEachTest() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();

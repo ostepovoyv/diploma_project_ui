@@ -15,7 +15,6 @@ public class SearchPage {
             searchButton = $(".search-hover__submit"),
             modalViewSearchResult = $(".autocomplete-products__item-title");
 
-
     @Step("Проверяем наличие поля поиска на главной странице")
     public SearchPage checkSearchInput(String value) {
         searchField.shouldHave(Condition.attribute("placeholder", value));

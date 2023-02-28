@@ -9,7 +9,7 @@ import org.aeonbits.owner.Config;
         "classpath:test.properties",
         "classpath:local.properties"
 })
-public interface WebDriverConfig extends Config  {
+public interface WebDriverConfig extends Config {
 
     @Key("baseUrl")
     String getBaseUrl();

@@ -8,13 +8,13 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 public class Helpers {
 
     @Step("Принудительно закрываем баннеры")
-    public void closeBanner(){
+    public void closeBanner() {
         executeJavaScript("$('#onesignal-slidedown-dialog').remove()");
         executeJavaScript("$('#regionsPopup').remove()");
     }
 
     @Step("Принудительно закрываем рекламный баннеры")
-    public void closeBannerPromotions(){
+    public void closeBannerPromotions() {
         executeJavaScript("$('#onesignal-slidedown-dialog').remove()");
     }
 }

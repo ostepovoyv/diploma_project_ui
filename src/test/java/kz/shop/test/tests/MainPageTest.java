@@ -11,8 +11,10 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
+
 import java.util.List;
 import java.util.stream.Stream;
+
 import static io.qameta.allure.Allure.step;
 
 @Epic("shop.kz")
@@ -23,7 +25,6 @@ public class MainPageTest extends BaseTest {
 
     MainPage mainPage = new MainPage();
     Helpers helpers = new Helpers();
-
 
     @ParameterizedTest(name = "Проверка наличия разделов на главной странице: {0}")
     @ValueSource(strings = {"Новости и анонсы", "Отзывы покупателей", "Опросы"})
@@ -64,8 +65,8 @@ public class MainPageTest extends BaseTest {
     @Test
     @DisplayName("Проверка наличия контактной информации")
     public void checkContactInformation() {
-        helpers.closeBanner();
         step("Проверка контактной информации в шапке на главной странице", () -> {
+            helpers.closeBanner();
             mainPage.checkContactInfoInHeader(TestData.CONTACT_PHONE);
         });
         step("Проверка контактной информации в футере", () -> {

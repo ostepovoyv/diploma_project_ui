@@ -10,6 +10,8 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static io.qameta.allure.Allure.step;
+
 @Epic("shop.kz")
 @Feature("Login")
 @Owner("ostepovoyv")
@@ -24,25 +26,29 @@ public class LoginTests extends BaseTest {
     @Test
     @DisplayName("Успешная авторизация на сайте")
     public void successfulAuthorizationTest() {
-        helpers.closeBanner();
-        mainPage.goToAuthModalForm(PersonalAreaData.ENTER_BUTTON_TEXT);
-        authFormPage
-                .checkModalFormTitle(PersonalAreaData.MODAL_FORM_TITLE_TEXT)
-                .setAuthInfo(config.getUserLogin(), config.userPassword())
-                .auth();
-        mainPage.checkAfterLogin(PersonalAreaData.PA_TEXT, PersonalAreaData.PERSONAL_SECTION_TITLE);
+        step("Тестируем успешную авторизацию на сайте", () -> {
+            helpers.closeBanner();
+            mainPage.goToAuthModalForm(PersonalAreaData.ENTER_BUTTON_TEXT);
+            authFormPage
+                    .checkModalFormTitle(PersonalAreaData.MODAL_FORM_TITLE_TEXT)
+                    .setAuthInfo(config.getUserLogin(), config.userPassword())
+                    .auth();
+            mainPage.checkAfterLogin(PersonalAreaData.PA_TEXT, PersonalAreaData.PERSONAL_SECTION_TITLE);
+        });
     }
 
     @Test
     @DisplayName("Авторизация на сайте, пользователь не зарегестрирован")
     public void unsuccessfulAuthorizationTest() {
-        helpers.closeBanner();
-        mainPage.goToAuthModalForm(PersonalAreaData.ENTER_BUTTON_TEXT);
-        authFormPage
-                .checkModalFormTitle(PersonalAreaData.MODAL_FORM_TITLE_TEXT)
-                .setAuthInfo(config.unregisteredUserLogin(), config.unregisteredUserPassword())
-                .auth()
-                .checkAuthStatus(PersonalAreaData.ERROR_TEXT);
+        step("Тестируем авторизацию с не существующим в системе пользователем", () -> {
+            helpers.closeBanner();
+            mainPage.goToAuthModalForm(PersonalAreaData.ENTER_BUTTON_TEXT);
+            authFormPage
+                    .checkModalFormTitle(PersonalAreaData.MODAL_FORM_TITLE_TEXT)
+                    .setAuthInfo(config.unregisteredUserLogin(), config.unregisteredUserPassword())
+                    .auth()
+                    .checkAuthStatus(PersonalAreaData.ERROR_TEXT);
+        });
     }
 
 }

@@ -40,13 +40,13 @@ public class CartPage {
     }
 
     @Step("Удаление продукта из корзины")
-    public CartPage deleteProduct(){
+    public CartPage deleteProduct() {
         deleteButton.click();
         return this;
     }
 
     @Step("Проверка корзины после удаления")
-    public CartPage checkAfterDelete(){
+    public CartPage checkAfterDelete() {
         productNameInCart.shouldNot(exist);
         return this;
     }

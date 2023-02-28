@@ -9,6 +9,7 @@ import kz.shop.test.testdata.TestData;
 import kz.shop.test.helpers.Helpers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static kz.shop.test.testdata.Endpoints.BASKET;
@@ -69,9 +70,11 @@ public class ProductTest extends BaseTest {
     @Test
     @DisplayName("Проверка сортировки по имени")
     public void sortingTest() {
-        penCatalogPage
-                .openPenCatalog()
-                .checkSortByName();
+        step("Тестируем сортировку по имени товара", () -> {
+            penCatalogPage
+                    .openPenCatalog()
+                    .checkSortByName();
+        });
     }
 
     @Test
@@ -93,7 +96,7 @@ public class ProductTest extends BaseTest {
                     .checkSlideMenuItemNames(accessories)
                     .checkSlideMenuItemNames(description)
                     .checkItemImageSlider()
-                    .checkProductCardInfo(TestData.DELIVERY,TestData.PAY, TestData.GUARANTEE)
+                    .checkProductCardInfo(TestData.DELIVERY, TestData.PAY, TestData.GUARANTEE)
                     .checkProductSpecificationsAvailableOnPage(TestData.SPECIFICATIONS_TEXT);
         });
     }
