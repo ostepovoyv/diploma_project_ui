@@ -3,7 +3,7 @@ package kz.shop.test.pages;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import kz.shop.test.utils.Helpers;
+import kz.shop.test.helpers.Helpers;
 import org.openqa.selenium.By;
 
 import java.util.List;

@@ -5,7 +5,7 @@ import kz.shop.test.config.WebDriverConfig;
 import kz.shop.test.pages.AuthFormPage;
 import kz.shop.test.pages.MainPage;
 import kz.shop.test.testdata.PersonalAreaData;
-import kz.shop.test.utils.Helpers;
+import kz.shop.test.helpers.Helpers;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

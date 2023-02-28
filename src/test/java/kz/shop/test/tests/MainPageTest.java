@@ -3,7 +3,7 @@ package kz.shop.test.tests;
 import io.qameta.allure.*;
 import kz.shop.test.pages.MainPage;
 import kz.shop.test.testdata.TestData;
-import kz.shop.test.utils.Helpers;
+import kz.shop.test.helpers.Helpers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

@@ -4,7 +4,7 @@ import io.qameta.allure.*;
 import kz.shop.test.pages.ProductCardPage;
 import kz.shop.test.pages.SearchPage;
 import kz.shop.test.testdata.TestData;
-import kz.shop.test.utils.Helpers;
+import kz.shop.test.helpers.Helpers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

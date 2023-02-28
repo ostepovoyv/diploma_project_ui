@@ -1,4 +1,4 @@
-package kz.shop.test.utils;
+package kz.shop.test.helpers;
 
 import io.qameta.allure.Step;
 
