@@ -9,10 +9,10 @@ import kz.shop.test.testdata.TestData;
 import kz.shop.test.utils.Helpers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static kz.shop.test.testdata.Endpoints.BASKET;
+import static kz.shop.test.testdata.Items.*;
 
 @Epic("shop.kz")
 @Feature("Product")
@@ -25,22 +25,6 @@ public class ProductTest extends BaseTest {
     CartPage cartPage = new CartPage();
     PenCatalogPage penCatalogPage = new PenCatalogPage();
     Helpers helpers = new Helpers();
-
-    @Test
-    @DisplayName("Проверка карточки товара")
-    public void verifyProductCardPage() {
-        step("Тестируем страницу карточки товара", () -> {
-            helpers.closeBanner();
-            searchPage
-                    .searchItemByVendorCode(TestData.ITEM_BY_VENDOR_CODE);
-            productCardPage
-                    .checkPageTitleAvailableOnPage(TestData.ITEM_BY_VENDOR_CODE_NAME)
-                    .checkVendorCodeAvailableOnPage(TestData.ITEM_BY_VENDOR_CODE)
-                    .checkCurrentPriceAvailableOnPage(TestData.ITEM_BY_VENDOR_CODE_PRICE)
-                    .checkBuyButtonAvailableOnPage(TestData.BUY_BUTTON_TEXT)
-                    .checkProductSpecificationsAvailableOnPage(TestData.SPECIFICATIONS_TEXT);
-        });
-    }
 
     @Test
     @DisplayName("Проверка добавления товара в корзину")
@@ -88,6 +72,30 @@ public class ProductTest extends BaseTest {
         penCatalogPage
                 .openPenCatalog()
                 .checkSortByName();
+    }
+
+    @Test
+    @DisplayName("Проверка карточки товара")
+    public void verifyProductCardPage() {
+        step("Тестируем страницу карточки товара", () -> {
+            helpers.closeBanner();
+            searchPage
+                    .searchItemByVendorCode(TestData.ITEM_BY_VENDOR_CODE);
+            productCardPage
+                    .checkPageTitleAvailableOnPage(TestData.ITEM_BY_VENDOR_CODE_NAME)
+                    .checkVendorCodeAvailableOnPage(TestData.ITEM_BY_VENDOR_CODE)
+                    .checkCurrentPriceAvailableOnPage()
+                    .checkBuyButtonAvailableOnPage(TestData.BUY_BUTTON_TEXT)
+                    .checkSlideMenuItemCount(TestData.SLIDE_MENU_ITEM_COUNT)
+                    .checkSlideMenuItemNames(characteristics)
+                    .checkSlideMenuItemNames(reviews)
+                    .checkSlideMenuItemNames(questions)
+                    .checkSlideMenuItemNames(accessories)
+                    .checkSlideMenuItemNames(description)
+                    .checkItemImageSlider()
+                    .checkProductCardInfo(TestData.DELIVERY,TestData.PAY, TestData.GUARANTEE)
+                    .checkProductSpecificationsAvailableOnPage(TestData.SPECIFICATIONS_TEXT);
+        });
     }
 
 }

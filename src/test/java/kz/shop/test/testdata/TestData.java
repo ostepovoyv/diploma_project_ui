@@ -5,7 +5,6 @@ public class TestData {
     public static final String ITEM_BY_NAME = "Мышь Delux DLM-375, Black, USB";
     public static final String ITEM_BY_VENDOR_CODE = "148662";
     public static final String ITEM_BY_VENDOR_CODE_NAME = "Мышь Logitech M190, Charcoal, USB";
-    public static final String ITEM_BY_VENDOR_CODE_PRICE = "4 590";
     public static final String SEARCH_INPUT_TEXT = "Поиск по сайту";
     public static final String BUY_BUTTON_TEXT = "Купить";
     public static final String SPECIFICATIONS_TEXT = "Технические характеристики";
@@ -20,4 +19,9 @@ public class TestData {
     public static final String ADRESS_AND_PHONE = "Адреса и телефоны";
     public static final String ADRESS_TEXT = "Наши адреса в г. Алматы";
     public static final String DEPARTMENT = "Интернет-магазин";
+    public static final String DELIVERY = "Быстрая доставка";
+    public static final String PAY = "Оплата";
+    public static final String GUARANTEE = "Услуги и Гарантия";
+    public static final Integer SLIDE_MENU_ITEM_COUNT = 5;
+
 }
