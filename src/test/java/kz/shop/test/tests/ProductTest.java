@@ -28,6 +28,30 @@ public class ProductTest extends BaseTest {
     Helpers helpers = new Helpers();
 
     @Test
+    @DisplayName("Проверка карточки товара")
+    public void verifyProductCardPage() {
+        step("Тестируем страницу карточки товара", () -> {
+            helpers.closeBanner();
+            searchPage
+                    .searchItemByVendorCode(TestData.ITEM_BY_VENDOR_CODE);
+            productCardPage
+                    .checkPageTitleAvailableOnPage(TestData.ITEM_BY_VENDOR_CODE_NAME)
+                    .checkVendorCodeAvailableOnPage(TestData.ITEM_BY_VENDOR_CODE)
+                    .checkCurrentPriceAvailableOnPage()
+                    .checkBuyButtonAvailableOnPage(TestData.BUY_BUTTON_TEXT)
+                    .checkSlideMenuItemCount(TestData.SLIDE_MENU_ITEM_COUNT)
+                    .checkSlideMenuItemNames(characteristics)
+                    .checkSlideMenuItemNames(reviews)
+                    .checkSlideMenuItemNames(questions)
+                    .checkSlideMenuItemNames(accessories)
+                    .checkSlideMenuItemNames(description)
+                    .checkItemImageSlider()
+                    .checkProductCardInfo(TestData.DELIVERY, TestData.PAY, TestData.GUARANTEE)
+                    .checkProductSpecificationsAvailableOnPage(TestData.SPECIFICATIONS_TEXT);
+        });
+    }
+
+    @Test
     @DisplayName("Проверка добавления товара в корзину")
     public void addProductToCart() {
         step("Тестируем добавление товара в корзину", () -> {
@@ -74,30 +98,6 @@ public class ProductTest extends BaseTest {
             penCatalogPage
                     .openPenCatalog()
                     .checkSortByName();
-        });
-    }
-
-    @Test
-    @DisplayName("Проверка карточки товара")
-    public void verifyProductCardPage() {
-        step("Тестируем страницу карточки товара", () -> {
-            helpers.closeBanner();
-            searchPage
-                    .searchItemByVendorCode(TestData.ITEM_BY_VENDOR_CODE);
-            productCardPage
-                    .checkPageTitleAvailableOnPage(TestData.ITEM_BY_VENDOR_CODE_NAME)
-                    .checkVendorCodeAvailableOnPage(TestData.ITEM_BY_VENDOR_CODE)
-                    .checkCurrentPriceAvailableOnPage()
-                    .checkBuyButtonAvailableOnPage(TestData.BUY_BUTTON_TEXT)
-                    .checkSlideMenuItemCount(TestData.SLIDE_MENU_ITEM_COUNT)
-                    .checkSlideMenuItemNames(characteristics)
-                    .checkSlideMenuItemNames(reviews)
-                    .checkSlideMenuItemNames(questions)
-                    .checkSlideMenuItemNames(accessories)
-                    .checkSlideMenuItemNames(description)
-                    .checkItemImageSlider()
-                    .checkProductCardInfo(TestData.DELIVERY, TestData.PAY, TestData.GUARANTEE)
-                    .checkProductSpecificationsAvailableOnPage(TestData.SPECIFICATIONS_TEXT);
         });
     }
 

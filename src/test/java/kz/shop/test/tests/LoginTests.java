@@ -38,7 +38,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-    @DisplayName("Авторизация на сайте, пользователь не зарегестрирован")
+    @DisplayName("Авторизация на сайте, пользователь не зарегистрирован")
     public void unsuccessfulAuthorizationTest() {
         step("Тестируем авторизацию с не существующим в системе пользователем", () -> {
             helpers.closeBanner();
