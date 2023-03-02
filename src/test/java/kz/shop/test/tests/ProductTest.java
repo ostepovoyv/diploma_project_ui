@@ -10,7 +10,6 @@ import kz.shop.test.helpers.Helpers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static kz.shop.test.testdata.Endpoints.BASKET;
 import static kz.shop.test.testdata.Items.*;
@@ -83,8 +82,8 @@ public class ProductTest extends BaseTest {
             productCardPage
                     .checkPageTitleAvailableOnPage(TestData.ITEM_BY_NAME)
                     .addProductToCart(TestData.ADD_TO_CART_BUTTON_AFTER_TEXT);
-            open(BASKET);
             cartPage
+                    .openCart(BASKET)
                     .checkProductInCart(TestData.ITEM_BY_NAME)
                     .deleteProduct()
                     .checkAfterDelete();

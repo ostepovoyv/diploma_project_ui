@@ -5,6 +5,7 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class CartPage {
 
@@ -14,6 +15,12 @@ public class CartPage {
             productNameInCart = $(".cart-bill-name"),
             cartSubmit = $("#CartSubmit"),
             deleteButton = $(".cart__rem-item");
+
+    @Step("Переход в корзину по ссылке")
+    public CartPage openCart(String value){
+        open(value);
+        return this;
+    }
 
     @Step("Переход в корзину")
     public CartPage goToCart() {
