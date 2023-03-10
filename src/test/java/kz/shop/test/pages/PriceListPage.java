@@ -67,7 +67,12 @@ public class PriceListPage {
     private void checkFile(PriceList priceList, File file) {
         assertThat(file.getName()).matches(priceList.getFileName());
         XLS xlsx = new XLS(getFile(file));
-        assertThat(xlsx.excel.getSheetAt(priceList.getSheet()).getRow(priceList.getRow()).getCell(priceList.getCell()).getStringCellValue()).isEqualTo(priceList.getValue());
+        assertThat(xlsx.excel
+                .getSheetAt(priceList.getSheet())
+                .getRow(priceList.getRow())
+                .getCell(priceList.getCell())
+                .getStringCellValue())
+                .isEqualTo(priceList.getValue());
     }
 
 }
