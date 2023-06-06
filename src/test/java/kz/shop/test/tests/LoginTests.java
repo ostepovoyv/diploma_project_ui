@@ -32,7 +32,7 @@ public class LoginTests extends BaseTest {
             authFormPage
                     .checkModalFormTitle(PersonalAreaData.MODAL_FORM_TITLE_TEXT)
                     .setAuthInfo(config.getUserLogin(), config.userPassword())
-                    .auth();
+                    .clickAuthButton();
             mainPage.checkAfterLogin(PersonalAreaData.PA_TEXT, PersonalAreaData.PERSONAL_SECTION_TITLE);
         });
     }
@@ -46,7 +46,7 @@ public class LoginTests extends BaseTest {
             authFormPage
                     .checkModalFormTitle(PersonalAreaData.MODAL_FORM_TITLE_TEXT)
                     .setAuthInfo(config.unregisteredUserLogin(), config.unregisteredUserPassword())
-                    .auth()
+                    .clickAuthButton()
                     .checkAuthStatus(PersonalAreaData.ERROR_TEXT);
         });
     }

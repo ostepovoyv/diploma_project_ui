@@ -29,7 +29,7 @@ public class AuthFormPage {
     }
 
     @Step("Нажимаем кнопку войти")
-    public AuthFormPage auth() {
+    public AuthFormPage clickAuthButton() {
         loginButton.click();
         return this;
     }

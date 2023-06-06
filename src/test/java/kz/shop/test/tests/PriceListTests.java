@@ -7,7 +7,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 
 import static io.qameta.allure.Allure.step;
 import static kz.shop.test.testdata.PriceLists.*;

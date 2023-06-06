@@ -33,8 +33,8 @@ public class MainPage {
 
 
     @Step("Проверяем горизонтальное меню")
-    public MainPage verifyHorizontalMenu(String items) {
-        horizontalMenu.filter(visible).shouldHave(texts(items));
+    public MainPage verifyHorizontalMenu(String item) {
+        horizontalMenu.filter(visible).shouldHave(texts(item));
         return this;
     }
 

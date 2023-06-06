@@ -81,8 +81,8 @@ public class ProductCardPage {
     }
 
     @Step("Проверка информации о доставке, оплате и гарантии")
-    public ProductCardPage checkProductCardInfo(String item1, String item2, String item3) {
-        cardInfo.shouldHave(texts(item1, item2, item3));
+    public ProductCardPage checkProductCardInfo(String... items) {
+        cardInfo.shouldHave(texts(items));
         return this;
     }
 
