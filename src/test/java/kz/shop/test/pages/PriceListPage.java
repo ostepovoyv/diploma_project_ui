@@ -55,10 +55,10 @@ public class PriceListPage {
 
     @Step("Загружаем файл, для дальнейшего использования в проверках")
     public File downloadFile(String fileName) throws FileNotFoundException {
-        if (fileName.equals(retailPriceFileCategory)) {
+        if (retailPriceFileCategory.equals(fileName)) {
             return $(retailPriceLocator).download();
         }
-        if (fileName.equals(servicesPriceFileCategory)) {
+        if (servicesPriceFileCategory.equals(fileName)) {
             return $(servicesPriceLocator).download();
         }
         return null;

@@ -16,8 +16,8 @@ public class TestData {
     public static final String PR_SERVICES = "Сервисные услуги";
     public static final String CONTACT_PHONE = " +7 771 920-19-20";
     public static final String CONTACT_PHONE_ON_PAGE = "+7 (771) 920-19-20";
-    public static final String ADRESS_AND_PHONE = "Адреса и телефоны";
-    public static final String ADRESS_TEXT = "Наши адреса в г. Алматы";
+    public static final String ADDRESS_AND_PHONE = "Адреса и телефоны";
+    public static final String ADDRESS_TEXT = "Наши адреса в г. Алматы";
     public static final String DEPARTMENT = "Интернет-магазин";
     public static final String DELIVERY = "Быстрая доставка";
     public static final String PAY = "Оплата";

@@ -71,9 +71,9 @@ public class MainPageTest extends BaseTest {
         });
         step("Проверка контактной информации в футере", () -> {
             mainPage
-                    .selectMenuItem(TestData.ADRESS_AND_PHONE)
+                    .selectMenuItem(TestData.ADDRESS_AND_PHONE)
                     .checkContactInfoInAdressAndPhone(
-                            TestData.ADRESS_TEXT,
+                            TestData.ADDRESS_TEXT,
                             TestData.DEPARTMENT,
                             TestData.CONTACT_PHONE_ON_PAGE
                     );
